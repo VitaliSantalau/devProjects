@@ -1,0 +1,96 @@
+// sass --watch style/input.scss:style/style.css
+
+// VARIABLE
+$font: 1.6rem Helvetica, Arial;
+$main-background-color: antiquewhite;
+$counter-background-color: rgb(235, 181, 112);
+$button-color: rgb(235, 181, 112);
+
+//RESET
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+// EXTEND
+%row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+%column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+%button {
+  text-decoration: none;
+  width: 10rem;
+  height: 3rem;
+  font-size: 2rem;
+  margin: 1rem;
+  color: $button-color;
+  background-color: #555;
+  background-image: linear-gradient(top, #888 0%, #555 100%);
+  border: none;
+  border-radius: .5rem;
+  text-shadow: 0px -1px 0px #000;
+  box-shadow: 0px 1px 0px #666,0px 5px 0px #444,0px 6px 6px rgba(0, 0, 0, .6);
+  transition: ease .15s all;
+}
+
+%button:active {
+  box-shadow: 0px 1px 0px #666,0px 2px 0px #444,0px 2px 2px rgba(0, 0, 0, .9);
+  transform: translateY(3px);
+  }
+
+// COMMON
+html {
+  font-size: 62.5%; // 16px * 62.5% = 10px = 1rem
+}
+
+body {
+  @extend %column;
+  height: 100vh;
+  font: $font;
+  background-color: $main-background-color;
+}
+
+.containerCounter {
+  @extend %column;
+  justify-content: space-between;
+  height: 36rem;
+  min-width: 35rem;
+  background-color: $counter-background-color;
+  box-shadow: .1rem .1rem .5rem .2rem rgb(190, 190, 190);
+}
+
+.number {
+  font-size: 21rem;
+}
+
+.containerButtons {
+  @extend %row;
+  width: 100%;
+}
+
+.plus {
+  @extend %button;
+}
+
+.minus {
+  @extend %button;
+}
+
+.reset {
+  @extend %button;
+}

@@ -16,6 +16,13 @@ a {
   text-decoration: none;
 }
 
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 html {
   font-size: 62.5%; /* 16px * 62.5% = 10px =1rem */
 }
