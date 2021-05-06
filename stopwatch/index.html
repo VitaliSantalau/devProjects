@@ -5,10 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="../style/style.css"/>
+    <link rel="stylesheet" type="text/css" href="./style/style.css"/>
     <title>Stopwatch created by VS</title>
   </head>
   <body>
-    <div class="root">stopwatch</div>
+    <section class="containerStopwatch">
+      <h1>Stopwatch</h1>
+      <div class="screen">
+        <div class="hour">00</div>
+        <div>:</div>
+        <div class="minute">00</div>
+        <div>:</div>
+        <div class="sec">00</div>
+      </div>
+      <div class="containerButtons">
+        <button class="start">start</button>
+        <button class="stop">stop</button>
+        <button class="reset">reset</button>
+      </div>
+    </section>
+    <script src="./script.js" defer></script>
   </body>
 </html>
