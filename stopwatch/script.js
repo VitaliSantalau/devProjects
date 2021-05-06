@@ -7,6 +7,13 @@ const resetButton = document.querySelector('.reset');
 
 let currentValue = 0;
 
-startButton.onClick = () => {
+startButton.onclick = () => {
+  setTimeout(function tic() {
+    currentValue++;
+    sec.innerHTML = `0${currentValue}`;
+    setTimeout(tic, 1000);
+  }, 1000)
+
   
 }
+
