@@ -92,7 +92,9 @@ h1 {
 
 .screen {
   @extend %row;
+  justify-content: space-evenly;
   flex-wrap: nowrap;
+  min-width: 90%;
   max-width: 95%;
   position: relative;
   font-size: 6rem;
@@ -110,6 +112,11 @@ h1 {
   height: 100%;
   border: 1px solid rgb(170, 130, 140);
   border-bottom: 1px solid rgb(120, 80, 90);
+}
+
+.hour, .minute, .sec {
+  width: 30%;
+  text-align: center;
 }
 
 .containerButtons {
