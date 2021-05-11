@@ -1,0 +1,127 @@
+// sass --watch style/input.scss:style/style.css
+
+// VARIABLE
+$font: 1.6rem Helvetica, Arial;
+$main-background-color: rgb(167, 174, 190);
+$timer-background-color: rgb(106, 113, 124);
+$timer-color: rgb(220, 210, 210);
+$button-background-color: #434343;
+$button-color: rgb(170, 160, 160);
+
+//RESET
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+// EXTEND
+%row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+%column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+%button {
+  color: $button-color;
+  font-weight: bold;
+  min-width: 6rem;
+  text-shadow: rgba(255,255,255,.5) 1px 1px, rgba(100,100,100,.3) 3px 7px 3px;
+  padding: 1em 1.5em;
+  margin: .5rem;
+  outline: none;
+  border-radius: 3px / 100%;
+  background-image:
+   linear-gradient(45deg, rgba(255,255,255,.0) 30%, rgba(255,255,255,.8), rgba(255,255,255,.0) 70%),
+   linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0) 20%, rgba(255,255,255,0) 90%, rgba(255,255,255,.3)),
+   linear-gradient(to right, rgba(125,125,125,1), rgba(255,255,255,.9) 45%, rgba(125,125,125,.5)),
+   linear-gradient(to right, rgba(125,125,125,1), rgba(255,255,255,.9) 45%, rgba(125,125,125,.5)),
+   linear-gradient(to right, rgba(223,190,170,1), rgba(255,255,255,.9) 45%, rgba(223,190,170,.5)),
+   linear-gradient(to right, rgba(223,190,170,1), rgba(255,255,255,.9) 45%, rgba(223,190,170,.5));
+  background-repeat: no-repeat;
+  background-size: 200% 100%, auto, 100% 2px, 100% 2px, 100% 1px, 100% 1px;
+  background-position: 200% 0, 0 0, 0 0, 0 100%, 0 4px, 0 calc(100% - 4px);
+  box-shadow: rgba(0,0,0,.5) 3px 10px 10px -10px;
+}
+
+%button:hover {
+  transition: .5s linear;
+  background-position: -200% 0, 0 0, 0 0, 0 100%, 0 4px, 0 calc(100% - 4px);
+}
+%button:active {
+  top: 1px;
+}
+
+// COMMON
+html {
+  font-size: 62.5%; // 16px * 62.5% = 10px = 1rem
+}
+
+body {
+  @extend %column;
+  height: 100vh;
+  font: $font;
+  background-color: $main-background-color;
+}
+
+h1 {
+  @extend %button;
+  font-size: 2rem;
+  color: $timer-color;
+}
+
+.containerTimer {
+  @extend %column;
+  justify-content: space-between;
+  height: 40rem;
+  width: 30rem;
+  max-width: 95%;
+  padding: 1rem;
+  background-color: $timer-background-color;
+  box-shadow: .1rem .1rem 5rem .1rem $timer-color;
+  background-image:
+   linear-gradient(45deg, rgba(255,255,255,.0) 30%, rgba(165, 148, 148, 0.8), rgba(255,255,255,.0) 70%),
+   linear-gradient(to right, rgb(160, 160, 160), rgba(255,255,255,0) 20%, rgba(255,255,255,0) 90%, rgba(255,255,255,.3)),
+   linear-gradient(to right, rgba(125,125,125,1), rgb(185, 185, 185) 45%, rgba(125,125,125,.5)),
+   linear-gradient(to right, rgba(125,125,125,1), rgb(185, 185, 185) 45%, rgba(125,125,125,.5)),
+   linear-gradient(to right, rgb(185, 185, 185), rgb(185, 185, 185) 45%, rgba(223,190,170,.5)),
+   linear-gradient(to right, rgb(185, 185, 185), rgb(185, 185, 185) 45%, rgba(223,190,170,.5));
+   background-repeat: no-repeat;
+   background-size: 200% 100%, auto, 100% 2px, 100% 2px, 100% 1px, 100% 1px;
+   background-position: 200% 0, 0 0, 0 0, 0 100%, 0 4px, 0 calc(100% - 4px);
+
+  }
+
+.containerSetButtons {
+  @extend %row;
+}
+
+.screen {
+  @extend %row;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  min-width: 95%;
+  max-width: 97%;
+  font-size: 7rem;
+  color: $timer-color;
+}
+
+.containerButtons {
+  @extend %row;
+}
+
+button {
+  @extend %button;
+}

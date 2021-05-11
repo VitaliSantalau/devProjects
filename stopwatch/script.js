@@ -5,33 +5,41 @@ const startButton = document.querySelector('.start');
 const stopButton = document.querySelector('.stop');
 const resetButton = document.querySelector('.reset');
 
-let currentState = {
-  duration: 0,
+let state = {
   sec: 0,
   minute: 0,
   hour: 0,
 };
-let idStopwatch;
+
+let 
+  idStopwatch,
+  startMoment, 
+  currentMoment, 
+  pastInterval = 0,
+  pastIntervalInSec;
 
 function correctViewElem(elem) {
   return (elem < 10) ? `0${elem}` : `${elem}`;
 }
 
 function tableView() {
-  sec.innerHTML = correctViewElem(currentState.sec);
-  minute.innerHTML = correctViewElem(currentState.minute);
-  hour.innerHTML = correctViewElem(currentState.hour);
+  sec.innerHTML = correctViewElem(state.sec);
+  minute.innerHTML = correctViewElem(state.minute);
+  hour.innerHTML = correctViewElem(state.hour);
 }
 
 function tic() {
-  currentState.duration++;
-  currentState.hour = Math.floor(currentState.duration / 3600);
-  currentState.minute = Math.floor(currentState.duration / 60) % 60;
-  currentState.sec = currentState.duration % 60;
+  currentMoment = Date.now();
+  pastInterval = currentMoment - startMoment;
+  pastIntervalInSec = Math.round(pastInterval / 1000);
+  state.hour = Math.floor(pastIntervalInSec / 3600);
+  state.minute = Math.floor(pastIntervalInSec / 60) % 60;
+  state.sec = pastIntervalInSec % 60;
   tableView();
 }
 
 startButton.onclick = () => {
+  startMoment = Date.now() - pastInterval;
   idStopwatch = setInterval(tic, 1000);
 }
 
@@ -41,11 +49,11 @@ stopButton.onclick = () => {
 
 resetButton.onclick = () => {
   clearInterval(idStopwatch);
-  currentState = {
-    duration: 0,
+  state = {
     sec: 0,
     minute: 0,
     hour: 0,
   };
+  pastInterval = 0;
   tableView();
 }
