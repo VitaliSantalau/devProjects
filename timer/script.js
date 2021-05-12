@@ -61,6 +61,7 @@ function tic() {
 }
 
 startButton.onclick = () => {
+  clearInterval(idTimer);
   startMoment = Date.now() + restInterval;
   idTimer = setInterval(tic, 1000);
 }
