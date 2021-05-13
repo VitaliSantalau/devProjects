@@ -2,11 +2,11 @@
 
 // VARIABLE
 $font: 1.6rem Helvetica, Arial;
-$main-background-color: rgb(167, 174, 190);
-$timer-background-color: rgb(106, 113, 124);
-$timer-color: rgb(220, 210, 210);
-$button-background-color: #434343;
-$button-color: rgb(170, 160, 160);
+$main-background-color: rgb(29, 53, 58);
+$clock-color: rgb(105, 85, 5);
+$hand-color: rgb(250, 225, 105);
+$width-clock: 20rem;
+$height-clock: 20rem;
 
 //RESET
 * {
@@ -19,55 +19,70 @@ a {
   text-decoration: none;
 }
 
-
-
-
-
-
-
-html {
-  background: #018DED url(https://unsplash.it/1500/1000?image=881&blur=5);
-  background-size: cover;
-  font-family: 'helvetica neue';
-  text-align: center;
-  font-size: 10px;
+// EXTEND
+%row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-body {
-  margin: 0;
-  font-size: 2rem;
+%column {
   display: flex;
-  flex: 1;
-  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
+html {
+  font-size: 62.5%; // 16px * 62.5% = 10px = 1rem
+}
+
+body {
+  @extend %column;
+  height: 100vh;
+  font: $font;
+  background-color: $main-background-color;
+}
+
 .clock {
-  width: 30rem;
-  height: 30rem;
-  border: 20px solid white;
+  position: relative;
+  width: $width-clock;
+  height: $height-clock;
+  overflow: hidden;
+  border: 1px solid red;
   border-radius: 50%;
-  margin: 50px auto;
-  position: relative;
-  padding: 2rem;
-  box-shadow:
-    0 0 0 4px rgba(0,0,0,0.1),
-    inset 0 0 0 3px #EFEFEF,
-    inset 0 0 10px black,
-    0 0 10px rgba(0,0,0,0.2);
 }
 
-.clock-face {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform: translateY(-3px); /* account for the height of the clock hands */
+.stroke {
+  position: absolute;
+  left: calc(50% - 0.05rem);
+  top: 50%;
+  height: $height-clock/8;
+  width: .1rem;
+  background-color: $clock-color; 
+  transform-origin: 50% 0;
+  transform: translateY($width-clock/2.5);
 }
 
+.stroke-15 {
+  transform: rotate(90deg) translateY($width-clock/2.5);
+}
+
+.stroke-30 {
+  transform: rotate(180deg) translateY($width-clock/2.5);
+}
+
+.stroke-45 {
+  transform: rotate(270deg) translateY($width-clock/2.5);
+}
+
+
+/*
 .hand {
   width: 50%;
-  height: 6px;
-  background: black;
+  height: 4px;
+  background: $hand-color;
   position: absolute;
   top: 50%;
-}
+}*/
