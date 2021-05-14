@@ -2,11 +2,15 @@
 
 // VARIABLE
 $font: 1.6rem Helvetica, Arial;
-$main-background-color: rgb(29, 53, 58);
-$clock-color: rgb(105, 85, 5);
+$main-background-color: rgb(100, 150, 161);
+$clock-background-color: rgb(29, 76, 85);
+$clock-color: rgb(122, 99, 7);
+$stroke-color: rgb(155, 126, 11);
+$number-color: rgb(122, 99, 7);
 $hand-color: rgb(250, 225, 105);
-$width-clock: 20rem;
-$height-clock: 20rem;
+$width-clock: 25rem;
+$height-clock: 25rem;
+
 
 //RESET
 * {
@@ -34,6 +38,38 @@ a {
   align-items: center;
 }
 
+%stroke {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - .4rem/2);
+  width: .4rem;
+  height: 3rem;
+  background-color: $stroke-color;
+  box-shadow: inset -.1rem 0 rgb(145, 123, 4), inset .1rem -.1rem rgb(145, 123, 4);
+  border-radius: .2rem;
+  transform-origin: 50% 0;
+}
+
+%stroke-small {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - .2rem/2);
+  width: .2rem;
+  height: 1rem;
+  background-color: $stroke-color;
+  box-shadow: inset -.1rem 0 rgb(145, 123, 4), inset .1rem -.1rem rgb(145, 123, 4);
+  border-radius: .1rem;
+  transform-origin: 50% 0;
+}
+
+%number {
+  position: absolute;
+  font-size: 3rem;
+  font-weight: bold;
+  color: $number-color;
+  text-shadow: .1rem .01rem .05rem rgb(145, 123, 4), .11rem .02rem .05rem rgb(90, 77, 3);
+}
+
 html {
   font-size: 62.5%; // 16px * 62.5% = 10px = 1rem
 }
@@ -45,38 +81,295 @@ body {
   background-color: $main-background-color;
 }
 
+.container {
+  @extend %row;
+  width: 30rem;
+  height: 30rem;
+  background-color: $clock-background-color;
+  box-shadow: 0rem 0rem 1rem rgba(0,0,0, .4);
+  border-radius: 20%;
+}
+
+
 .clock {
   position: relative;
   width: $width-clock;
   height: $height-clock;
   overflow: hidden;
-  border: 1px solid red;
+  background-color: $clock-background-color;
+  border: .3rem solid rgba(0,0,0, .2);
   border-radius: 50%;
+  box-shadow: inset 0 0 5rem rgba(0,0,0, .3);
 }
 
-.stroke {
-  position: absolute;
-  left: calc(50% - 0.05rem);
-  top: 50%;
-  height: $height-clock/8;
-  width: .1rem;
-  background-color: $clock-color; 
-  transform-origin: 50% 0;
-  transform: translateY($width-clock/2.5);
+.stroke-big-0 {
+  @extend %stroke;
+  height: 1.5rem;
+  transform: rotate(180deg) translateY($width-clock/2.4);
+}
+.stroke-small-1 {
+  @extend %stroke-small;
+  transform: rotate(186deg) translateY($width-clock/2.3);
+}
+.stroke-small-2 {
+  @extend %stroke-small;
+  transform: rotate(192deg) translateY($width-clock/2.3);
+}
+.stroke-small-3 {
+  @extend %stroke-small;
+  transform: rotate(198deg) translateY($width-clock/2.3);
+}
+.stroke-small-4 {
+  @extend %stroke-small;
+  transform: rotate(204deg) translateY($width-clock/2.3);
+}
+.stroke-big-5 {
+  @extend %stroke;
+  transform: rotate(210deg) translateY($width-clock/2.8);
+}
+.stroke-small-6 {
+  @extend %stroke-small;
+  transform: rotate(216deg) translateY($width-clock/2.3);
+}
+.stroke-small-7 {
+  @extend %stroke-small;
+  transform: rotate(222deg) translateY($width-clock/2.3);
+}
+.stroke-small-8 {
+  @extend %stroke-small;
+  transform: rotate(228deg) translateY($width-clock/2.3);
+}
+.stroke-small-9 {
+  @extend %stroke-small;
+  transform: rotate(234deg) translateY($width-clock/2.3);
+}
+.stroke-big-10 {
+  @extend %stroke;
+  transform: rotate(240deg) translateY($width-clock/2.8);
+}
+.stroke-small-11 {
+  @extend %stroke-small;
+  transform: rotate(246deg) translateY($width-clock/2.3);
+}
+.stroke-small-12 {
+  @extend %stroke-small;
+  transform: rotate(252deg) translateY($width-clock/2.3);
+}
+.stroke-small-13 {
+  @extend %stroke-small;
+  transform: rotate(258deg) translateY($width-clock/2.3);
+}
+.stroke-small-14 {
+  @extend %stroke-small;
+  transform: rotate(264deg) translateY($width-clock/2.3);
+}
+.stroke-big-15 {
+  @extend %stroke;
+  height: 1.5rem;
+  transform: rotate(270deg) translateY($width-clock/2.4);
+}
+.stroke-small-16 {
+  @extend %stroke-small;
+  transform: rotate(276deg) translateY($width-clock/2.3);
+}
+.stroke-small-17 {
+  @extend %stroke-small;
+  transform: rotate(282deg) translateY($width-clock/2.3);
+}
+.stroke-small-18 {
+  @extend %stroke-small;
+  transform: rotate(288deg) translateY($width-clock/2.3);
+}
+.stroke-small-19 {
+  @extend %stroke-small;
+  transform: rotate(294deg) translateY($width-clock/2.3);
+}
+.stroke-big-20 {
+  @extend %stroke;
+  transform: rotate(300deg) translateY($width-clock/2.8);
+}
+.stroke-small-21 {
+  @extend %stroke-small;
+  transform: rotate(306deg) translateY($width-clock/2.3);
+}
+.stroke-small-22 {
+  @extend %stroke-small;
+  transform: rotate(312deg) translateY($width-clock/2.3);
+}
+.stroke-small-23 {
+  @extend %stroke-small;
+  transform: rotate(318deg) translateY($width-clock/2.3);
+}
+.stroke-small-24 {
+  @extend %stroke-small;
+  transform: rotate(324deg) translateY($width-clock/2.3);
+}
+.stroke-big-25 {
+  @extend %stroke;
+  transform: rotate(330deg) translateY($width-clock/2.8);
+}
+.stroke-small-26 {
+  @extend %stroke-small;
+  transform: rotate(336deg) translateY($width-clock/2.3);
+}
+.stroke-small-27 {
+  @extend %stroke-small;
+  transform: rotate(342deg) translateY($width-clock/2.3);
+}
+.stroke-small-28 {
+  @extend %stroke-small;
+  transform: rotate(348deg) translateY($width-clock/2.3);
+}
+.stroke-small-29 {
+  @extend %stroke-small;
+  transform: rotate(354deg) translateY($width-clock/2.3);
+}
+.stroke-big-30 {
+  @extend %stroke;
+  height: 1.5rem;
+  transform: translateY($width-clock/2.4);
+}
+.stroke-small-31 {
+  @extend %stroke-small;
+  transform: rotate(6deg) translateY($width-clock/2.3);
+}
+.stroke-small-32 {
+  @extend %stroke-small;
+  transform: rotate(12deg) translateY($width-clock/2.3);
+}
+.stroke-small-33 {
+  @extend %stroke-small;
+  transform: rotate(18deg) translateY($width-clock/2.3);
+}
+.stroke-small-34 {
+  @extend %stroke-small;
+  transform: rotate(24deg) translateY($width-clock/2.3);
+}
+.stroke-big-35 {
+  @extend %stroke;
+  transform: rotate(30deg) translateY($width-clock/2.8);
+}
+.stroke-small-36 {
+  @extend %stroke-small;
+  transform: rotate(36deg) translateY($width-clock/2.3);
+}
+.stroke-small-37 {
+  @extend %stroke-small;
+  transform: rotate(42deg) translateY($width-clock/2.3);
+}
+.stroke-small-38 {
+  @extend %stroke-small;
+  transform: rotate(48deg) translateY($width-clock/2.3);
+}
+.stroke-small-39 {
+  @extend %stroke-small;
+  transform: rotate(54deg) translateY($width-clock/2.3);
+}
+.stroke-big-40 {
+  @extend %stroke;
+  transform: rotate(60deg) translateY($width-clock/2.8);
+}
+.stroke-small-41 {
+  @extend %stroke-small;
+  transform: rotate(66deg) translateY($width-clock/2.3);
+}
+.stroke-small-42 {
+  @extend %stroke-small;
+  transform: rotate(72deg) translateY($width-clock/2.3);
+}
+.stroke-small-43 {
+  @extend %stroke-small;
+  transform: rotate(78deg) translateY($width-clock/2.3);
+}
+.stroke-small-44 {
+  @extend %stroke-small;
+  transform: rotate(84deg) translateY($width-clock/2.3);
+}
+.stroke-big-45 {
+  @extend %stroke;
+  height: 1.5rem;
+  transform: rotate(90deg) translateY($width-clock/2.4);
+}
+.stroke-small-46 {
+  @extend %stroke-small;
+  transform: rotate(96deg) translateY($width-clock/2.3);
+}
+.stroke-small-47 {
+  @extend %stroke-small;
+  transform: rotate(102deg) translateY($width-clock/2.3);
+}
+.stroke-small-48 {
+  @extend %stroke-small;
+  transform: rotate(108deg) translateY($width-clock/2.3);
+}
+.stroke-small-49 {
+  @extend %stroke-small;
+  transform: rotate(114deg) translateY($width-clock/2.3);
+}
+.stroke-big-50 {
+  @extend %stroke;
+  transform: rotate(120deg) translateY($width-clock/2.8);
+}
+.stroke-small-51 {
+  @extend %stroke-small;
+  transform: rotate(126deg) translateY($width-clock/2.3);
+}
+.stroke-small-52 {
+  @extend %stroke-small;
+  transform: rotate(132deg) translateY($width-clock/2.3);
+}
+.stroke-small-53 {
+  @extend %stroke-small;
+  transform: rotate(138deg) translateY($width-clock/2.3);
+}
+.stroke-small-54 {
+  @extend %stroke-small;
+  transform: rotate(144deg) translateY($width-clock/2.3);
+}
+.stroke-big-55 {
+  @extend %stroke;
+  transform: rotate(150deg) translateY($width-clock/2.8);
+}
+.stroke-small-56 {
+  @extend %stroke-small;
+  transform: rotate(156deg) translateY($width-clock/2.3);
+}
+.stroke-small-57 {
+  @extend %stroke-small;
+  transform: rotate(162deg) translateY($width-clock/2.3);
+}
+.stroke-small-58 {
+  @extend %stroke-small;
+  transform: rotate(168deg) translateY($width-clock/2.3);
+}
+.stroke-small-59 {
+  @extend %stroke-small;
+  transform: rotate(174deg) translateY($width-clock/2.3);
 }
 
-.stroke-15 {
-  transform: rotate(90deg) translateY($width-clock/2.5);
+.twelve {
+  @extend %number;
+  top: 2rem;
+  left: calc(50% - 2rem);
 }
 
-.stroke-30 {
-  transform: rotate(180deg) translateY($width-clock/2.5);
+.three {
+  @extend %number;
+  top: calc(50% - 1.5rem);
+  right: 2.5rem;
 }
 
-.stroke-45 {
-  transform: rotate(270deg) translateY($width-clock/2.5);
+.six {
+  @extend %number;
+  bottom: 2rem;
+  left: calc(50% - 1rem);
 }
 
+.nine {
+  @extend %number;
+  top: calc(50% - 1.5rem);
+  left: 2.5rem;
+}
 
 /*
 .hand {
