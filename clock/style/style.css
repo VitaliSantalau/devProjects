@@ -1,3 +1,4 @@
+/*WallClock, Helvetica, Arial*/
 * {
   padding: 0;
   margin: 0;
@@ -28,8 +29,7 @@ body {
   left: calc(50% - .4rem/2);
   width: 0.4rem;
   height: 3rem;
-  background-color: #9b7e0b;
-  box-shadow: inset -0.1rem 0 #917b04, inset 0.1rem -0.1rem #917b04;
+  background-color: black;
   border-radius: 0.2rem;
   transform-origin: 50% 0;
 }
@@ -40,8 +40,7 @@ body {
   left: calc(50% - .2rem/2);
   width: 0.2rem;
   height: 1rem;
-  background-color: #9b7e0b;
-  box-shadow: inset -0.1rem 0 #917b04, inset 0.1rem -0.1rem #917b04;
+  background-color: black;
   border-radius: 0.1rem;
   transform-origin: 50% 0;
 }
@@ -50,8 +49,7 @@ body {
   position: absolute;
   font-size: 3rem;
   font-weight: bold;
-  color: #7a6307;
-  text-shadow: 0.1rem 0.01rem 0.05rem #917b04, 0.11rem 0.02rem 0.05rem #5a4d03;
+  color: black;
 }
 
 html {
@@ -60,16 +58,40 @@ html {
 
 body {
   height: 100vh;
-  font: 1.6rem Helvetica, Arial;
-  background-color: #6496a1;
+  font: 1.6rem WallClock, sans-serif;
+  background-color: #dde2e2;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  width: 26rem;
+  height: 26rem;
+  border: 0.2rem solid #95a2a3;
+  border-radius: 50%;
+  background: #eed;
+  /*f4f5f6;*/
+  box-shadow: inset 0.15em 0.2em 0.05em rgba(0, 0, 0, 0.4), inset 0.2em 0.4em 0.2em rgba(0, 0, 0, 0.3), inset 0 0.05em 0.3em rgba(0, 0, 0, 0.1), -0.15em 0.05em 0 #444, 0.15em -0.05em 0 #444;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  width: 25.8rem;
+  height: 25.8rem;
+  border: 0.2rem solid #95a2a3;
+  border-radius: 50%;
+  box-shadow: inset 0.05em 0 0 #fff, inset 0 -0.05em 0 #ddd, inset 0.15em -0.1em 0 #222, inset -0.15em 0.1em 0 #222, inset 0.2em 0.2em 0 #222, 0.05em -0.05em 0 #999, -0.1em 0.1em 0 #777, -0.15em -0.2em 0 #fff, 0.1em 0.1em 0 #5a5959, 0.15em 0.15em 0 #363636;
 }
 
 .container {
-  width: 30rem;
-  height: 30rem;
-  background-color: #1d4c55;
-  box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.4);
-  border-radius: 20%;
+  width: 26rem;
+  height: 26rem;
+  border-radius: 50%;
+  border: 0.5rem solid #3e4141;
+  background-color: #f1f4f5;
+  background: #ccc;
+  box-shadow: inset 0.05em -0.05em 0 #333, inset 0.2em -0.2em 0 #555, inset -0.05em -0.05em 0 #333, inset -0.03em 0.02em 0 #333, inset -0.1em -0.1em 0 #555, 0.1em 0.3em 0.2em rgba(0, 0, 0, 0.3);
 }
 
 .clock {
@@ -77,10 +99,8 @@ body {
   width: 25rem;
   height: 25rem;
   overflow: hidden;
-  background-color: #1d4c55;
-  border: 0.3rem solid rgba(0, 0, 0, 0.2);
   border-radius: 50%;
-  box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0.15em 0.2em 0.05em rgba(0, 0, 0, 0.4), inset 0.2em 0.4em 0.2em rgba(0, 0, 0, 0.3), inset 0 0.05em 0.3em rgba(0, 0, 0, 0.1), -0.2em 0.1em 0 #444, 0.2em -0.1em 0 #444;
 }
 
 .stroke-big-0 {
@@ -329,7 +349,7 @@ body {
 
 .twelve {
   top: 2rem;
-  left: calc(50% - 2rem);
+  left: calc(50% - 1.8rem);
 }
 
 .three {
@@ -339,7 +359,7 @@ body {
 
 .six {
   bottom: 2rem;
-  left: calc(50% - 1rem);
+  left: calc(50% - .9rem);
 }
 
 .nine {
@@ -347,13 +367,63 @@ body {
   left: 2.5rem;
 }
 
-/*
-.hand {
-  width: 50%;
-  height: 4px;
-  background: $hand-color;
+.center::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 2rem/2);
+  left: calc(50% - 2rem/2);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.center::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1rem/2);
+  left: calc(50% - 1rem/2);
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #c80a0a;
+  z-index: 1;
+}
+
+.sec {
+  width: 0.35rem;
+  height: 12.5rem;
+  background: black;
   position: absolute;
   top: 50%;
-}*/
+  left: calc(50% - 0.35rem/2);
+  transform-origin: 50% 0;
+  background-color: #c80a0a;
+  box-shadow: 0.3rem 0.3rem 0.1rem rgba(0, 0, 0, 0.2);
+}
+
+.min {
+  width: 0.5rem;
+  height: 10.8695652174rem;
+  background: black;
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 0.5rem/2);
+  transform-origin: 50% 0;
+  background-color: black;
+  box-shadow: 0.3rem 0.3rem 0.1rem rgba(0, 0, 0, 0.2);
+}
+
+.hour {
+  width: 0.6rem;
+  height: 8.9285714286rem;
+  background: black;
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 0.6rem/2);
+  transform-origin: 50% 0;
+  background-color: black;
+  box-shadow: 0.3rem 0.3rem 0.1rem rgba(0, 0, 0, 0.2);
+}
 
 /*# sourceMappingURL=style.css.map */
