@@ -1,0 +1,57 @@
+// sass --watch style/input.scss:style/style.css
+@import "./scss/fontawesome.scss";
+@import "./scss/solid.scss";
+@import "./scss/brands.scss";
+
+// VARIABLE
+$font: 1.6rem Helvetica, Arial;
+$main-background-color: rgb(5, 25, 60);
+$main-color: rgb(250, 250, 250);
+
+//RESET
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+// EXTEND
+%row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+%column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// COMMON
+html {
+  font-size: 62.5%; // 16px * 62.5% = 10px = 1rem
+}
+
+body {
+  @extend %column;
+  height: 100vh;
+  font: $font;
+  color: $main-color;
+  background-color: $main-background-color;
+}
+
+input[type=text] {
+  font: $font;
+  color: $main-color;
+  background-color: $main-background-color;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgb(230, 230, 230);
+}
