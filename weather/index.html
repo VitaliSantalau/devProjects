@@ -6,20 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="./style/style.css"/>
-    <link href="./style/scss/fontawesome.css" rel="stylesheet">
-    <link href="./style/scss/css/brands.css" rel="stylesheet">
-    <link href="./style/scss/solid.scss" rel="stylesheet">
+    <link href="./style/css/fontawesome.css" rel="stylesheet">
+    <link href="./style/css/brands.css" rel="stylesheet">
+    <link href="./style/css/solid.css" rel="stylesheet">
     <title>Weather App created by VS</title>
   </head>
   <body>
     <div class="container">
       <h1>Weather</h1>
-      <form>
-        <input type="text" placeholder="City search..." autofocus>
+      <form class="search-form">
+        <input type="text" class="inputCity" placeholder="City search..." autofocus>
         <button type="submit" class="search">
-          <i class="fa fa-search"></i>
+          <i class="fas fa-search"></i>
         </button>
       </form>
+      <section class="outputcontainer">
+        <div class="example"></div>
+      </section>
       
     </div>
     <script src="./script.js" defer></script>
