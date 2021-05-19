@@ -6,24 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="./style/style.css"/>
-    <link href="./style/css/fontawesome.css" rel="stylesheet">
-    <link href="./style/css/brands.css" rel="stylesheet">
-    <link href="./style/css/solid.css" rel="stylesheet">
+    <link href="./style/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="./style/fontawesome/css/solid.min.css" rel="stylesheet">
     <title>Weather App created by VS</title>
   </head>
   <body>
-    <div class="container">
-      <h1>Weather</h1>
-      <form class="search-form">
-        <input type="text" class="inputCity" placeholder="City search..." autofocus>
-        <button type="submit" class="search">
-          <i class="fas fa-search"></i>
+    <div class="root">
+      <header class="header">
+        <div class="logo">weather conditions</div>
+        <form class="search-form">
+          <input type="text" class="inputCity" placeholder="City search..." autofocus>
+          <button type="submit" class="search">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+        <button class="switchMeasurement">
+          <div class="celsius">	&deg;C</div>
+          <div>/</div>
+          <div class="fahrenheit">	&deg;F</div>
         </button>
-      </form>
+      </header>
+      <main class="main">
+          <section class="currentDataMain">
+            <div class="currentDataNow">
+              <div class="city">City</div>
+              <div>Clouds</div>
+              <div class="temperature">22	&deg;</div>
+              <div class="coordinates">
+                <div>H:25&deg;</div>
+                <div>L:20&deg;</div>
+              </div>
+            </div>
+            <div class="currentDataByHours">
+              <ul>
+                <li>now</li>
+                <li>next</li>
+                <li>next</li>
+                <li>next</li>
+              </ul>
+            </div>
+          </section>
+          <div class="currentDataAdditional"></div>
+        <section class="forecastData"></section>
+      </main>
       <section class="outputcontainer">
         <div class="example"></div>
       </section>
-      
+      <footer class="footer"></footer>
     </div>
     <script src="./script.js" defer></script>
   </body>

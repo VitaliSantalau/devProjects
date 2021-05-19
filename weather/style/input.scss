@@ -15,6 +15,7 @@ $main-color-hover: rgb(190, 190, 190);
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 // EXTEND
@@ -45,27 +46,86 @@ body {
   background-color: $main-background-color;
 }
 
-input[type=text] {
-  font: $font;
-  color: $main-color;
-  background-color: $main-background-color;
-  outline: none;
-  border: none;
-  border-bottom: 1px solid rgb(230, 230, 230);
+.root {
+  @extend %column;
+  justify-content: flex-start;
+  align-items: stretch;
+  height: 100%;
+  width: 100vw;
+  border: 1px solid;
 }
 
-.search {
-  width: 2.5rem;
-  height: 2.5rem;
-  color: $main-color;
-  background-color: $main-background-color;
-  border: none;
+header {
+  @extend %row;
+  justify-content: space-between;
+  padding: 1rem;
+
+  .logo {
+    @extend %row;
+    font: $font;
+    word-wrap: break-word;
+    margin: 1rem;
+  }
+  .search-form {
+    @extend %row;
+    flex-wrap: nowrap;
+    margin: auto;
+  }
+  input[type=text] {
+    max-width: 25rem;
+    width: 100%;
+    font: $font;
+    color: $main-color;
+    background-color: $main-background-color;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(230, 230, 230);
+  }
+  .search {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: $main-color;
+    background-color: $main-background-color;
+    border: none;
+  }
+  .search:hover {
+    color: $main-color-hover;
+  }
+  .switchMeasurement {
+    @extend %row;
+    justify-content: space-evenly;
+    max-width: 10rem;
+    width: 100%;
+    height: 2.5rem;
+    margin: 1rem;
+    font-size: 1.5rem;
+  }
 }
 
-.search:hover {
-  color: $main-color-hover;
+main {
+  @extend %column;
+  align-items: stretch;
+  
+  .currentDataMain {
+    @extend %row;
+    background-color: $main-color;
+    color: $main-background-color;
+
+    .currentDataNow {
+      max-width: 20rem;
+      width: 100%;
+      border: 1px solid;
+      /*flex: 0 0 20rem;*/
+    }
+    .currentDataByHours {
+    }
+  }
 }
 
 .example {
   color: $main-color;
+}
+
+footer {
+  grid-area: footer;
 }

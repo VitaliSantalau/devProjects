@@ -6,9 +6,17 @@
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
-body {
+main .currentDataMain, header .switchMeasurement, header .search-form, header .logo, header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+main, .root, body {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,7 +34,30 @@ body {
   background-color: #05193c;
 }
 
-input[type=text] {
+.root {
+  justify-content: flex-start;
+  align-items: stretch;
+  height: 100%;
+  width: 100vw;
+  border: 1px solid;
+}
+
+header {
+  justify-content: space-between;
+  padding: 1rem;
+}
+header .logo {
+  font: 1.6rem Helvetica, Arial;
+  word-wrap: break-word;
+  margin: 1rem;
+}
+header .search-form {
+  flex-wrap: nowrap;
+  margin: auto;
+}
+header input[type=text] {
+  max-width: 25rem;
+  width: 100%;
   font: 1.6rem Helvetica, Arial;
   color: #fafafa;
   background-color: #05193c;
@@ -34,21 +65,44 @@ input[type=text] {
   border: none;
   border-bottom: 1px solid #e6e6e6;
 }
-
-.search {
+header .search {
   width: 2.5rem;
   height: 2.5rem;
   color: #fafafa;
   background-color: #05193c;
   border: none;
 }
-
-.search:hover {
+header .search:hover {
   color: #bebebe;
 }
+header .switchMeasurement {
+  justify-content: space-evenly;
+  max-width: 10rem;
+  width: 100%;
+  height: 2.5rem;
+  margin: 1rem;
+  font-size: 1.5rem;
+}
 
+main {
+  align-items: stretch;
+}
+main .currentDataMain {
+  background-color: #fafafa;
+  color: #05193c;
+}
+main .currentDataMain .currentDataNow {
+  max-width: 20rem;
+  width: 100%;
+  border: 1px solid;
+  /*flex: 0 0 20rem;*/
+}
 .example {
   color: #fafafa;
+}
+
+footer {
+  grid-area: footer;
 }
 
 /*# sourceMappingURL=style.css.map */
