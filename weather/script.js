@@ -9,26 +9,18 @@ const minutes = document.querySelector('.minutes');
 const month = document.querySelector('.month');
 const day = document.querySelector('.day');
 
-let currentStateCity = {
-  default: "City didn't set",
-  location: {
-    latitude: '',
-    longitude: '',
-  },
-  inputNameCity: false,
-}
 
 function convertNumberMonthtoString(num) {
   const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   return month[num];
 }
 
-async function outputDate() {
-  currentMoment = new Date();
-  let getHours = await currentMoment.getHours();
-  let getMins = await currentMoment.getMinutes();
-  let getMonth = await currentMoment.getMonth();
-  let getDay = await currentMoment.getDate();
+function outputDate() {
+  let currentMoment = new Date();
+  let getHours = currentMoment.getHours();
+  let getMins = currentMoment.getMinutes();
+  let getMonth = currentMoment.getMonth();
+  let getDay = currentMoment.getDate();
   hours.innerHTML = getHours < 10 ? `0${getHours}` : getHours;
   minutes.innerHTML = getMins < 10 ? `0${getMins}` : getMins;
   month.innerHTML = convertNumberMonthtoString(getMonth);
@@ -58,8 +50,8 @@ curentLocationButton.onclick = () => {
     let crd = pos.coords;
     currentStateCity.location.latitude = crd.latitude;
     currentStateCity.location.longitude = crd.longitude;
-    const { name } = await getWeatherData();
-     outputCity.innerHTML = `<div>${name}</div>`;
+    /*const { name } = await getWeatherData();
+    outputCity.innerHTML = `<div>${name}</div>`;*/
   }
   navigator.geolocation.getCurrentPosition(success);
 }
