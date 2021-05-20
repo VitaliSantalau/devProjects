@@ -1,7 +1,7 @@
 // sass --watch style/input.scss:style/style.css
 
 // VARIABLE
-$font: 1.6rem Helvetica, Arial;
+$font: 1.6rem Helvetica, Arial, sans-serif;
 $main-background-color: rgb(5, 25, 60);
 $main-color: rgb(250, 250, 250);
 $main-color-hover: rgb(190, 190, 190);
@@ -39,20 +39,11 @@ html {
 }
 
 body {
-  @extend %column;
   height: 100vh;
+  width: 100vw;
   font: $font;
   color: $main-color;
   background-color: $main-background-color;
-}
-
-.root {
-  @extend %column;
-  justify-content: flex-start;
-  align-items: stretch;
-  height: 100%;
-  width: 100vw;
-  border: 1px solid;
 }
 
 header {
@@ -66,7 +57,7 @@ header {
     word-wrap: break-word;
     margin: 1rem;
   }
-  .search-form {
+  .searchForm {
     @extend %row;
     flex-wrap: nowrap;
     margin: auto;
@@ -81,20 +72,19 @@ header {
     border: none;
     border-bottom: 1px solid rgb(230, 230, 230);
   }
-  .search {
+  .searchButton {
     width: 2.5rem;
     height: 2.5rem;
     color: $main-color;
     background-color: $main-background-color;
     border: none;
   }
-  .search:hover {
+  .searchButton:hover {
     color: $main-color-hover;
   }
-  .switchMeasurement {
-    @extend %row;
-    justify-content: space-evenly;
-    max-width: 10rem;
+  .curentLocationButton {
+    text-align: center;
+    max-width: 13rem;
     width: 100%;
     height: 2.5rem;
     margin: 1rem;
@@ -103,29 +93,25 @@ header {
 }
 
 main {
-  @extend %column;
-  align-items: stretch;
-  
-  .currentDataMain {
-    @extend %row;
+  @extend %row;
+  .currentData {
+    max-width: 30rem;
+    width: 100%;
     background-color: $main-color;
     color: $main-background-color;
-
-    .currentDataNow {
-      max-width: 20rem;
-      width: 100%;
-      border: 1px solid;
-      /*flex: 0 0 20rem;*/
-    }
-    .currentDataByHours {
-    }
+    margin: 1rem;
+    padding: .5rem;
+    border-radius: .2rem;
   }
 }
 
-.example {
-  color: $main-color;
-}
-
-footer {
-  grid-area: footer;
+.containerTimeDate {
+  @extend %row;
+  justify-content: space-between;
+  .time {
+    @extend %row;
+  }
+  .date {
+    @extend %row;
+  }
 }

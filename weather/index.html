@@ -11,49 +11,35 @@
     <title>Weather App created by VS</title>
   </head>
   <body>
-    <div class="root">
-      <header class="header">
-        <div class="logo">weather conditions</div>
-        <form class="search-form">
-          <input type="text" class="inputCity" placeholder="City search..." autofocus>
-          <button type="submit" class="search">
-            <i class="fas fa-search"></i>
-          </button>
-        </form>
-        <button class="switchMeasurement">
-          <div class="celsius">	&deg;C</div>
-          <div>/</div>
-          <div class="fahrenheit">	&deg;F</div>
+    <header class="header">
+      <h1 class="logo">Weather conditions</h1>
+      <form class="searchForm">
+        <input type="text" class="inputCity" placeholder="City search..." autofocus>
+        <button type="submit" class="searchButton">
+          <i class="fas fa-search"></i>
         </button>
-      </header>
-      <main class="main">
-          <section class="currentDataMain">
-            <div class="currentDataNow">
-              <div class="city">City</div>
-              <div>Clouds</div>
-              <div class="temperature">22	&deg;</div>
-              <div class="coordinates">
-                <div>H:25&deg;</div>
-                <div>L:20&deg;</div>
-              </div>
-            </div>
-            <div class="currentDataByHours">
-              <ul>
-                <li>now</li>
-                <li>next</li>
-                <li>next</li>
-                <li>next</li>
-              </ul>
-            </div>
-          </section>
-          <div class="currentDataAdditional"></div>
-        <section class="forecastData"></section>
-      </main>
-      <section class="outputcontainer">
-        <div class="example"></div>
+      </form>
+      <button class="curentLocationButton">
+        Current location
+      </button>
+    </header>  
+    <main class="main">
+      <section class="currentData">
+        <div class="containerTimeDate">
+          <div class="time">
+            <div class="hours">00</div>
+            <div>:</div>
+            <div class="minutes">00</div>
+          </div>
+          <div class="date">
+            <div class="month">00</div>
+            &nbsp;
+            <div class="day">00</div>
+          </div>
+        </div>
+        <div class="outputCity">City didn't set</div>
       </section>
-      <footer class="footer"></footer>
-    </div>
+    </main>
     <script src="./script.js" defer></script>
   </body>
 </html>

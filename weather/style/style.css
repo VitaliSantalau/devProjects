@@ -9,18 +9,11 @@ a {
   color: inherit;
 }
 
-main .currentDataMain, header .switchMeasurement, header .search-form, header .logo, header {
+.containerTimeDate .date, .containerTimeDate .time, .containerTimeDate, main, header .searchForm, header .logo, header {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-}
-
-main, .root, body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 html {
@@ -29,17 +22,10 @@ html {
 
 body {
   height: 100vh;
-  font: 1.6rem Helvetica, Arial;
+  width: 100vw;
+  font: 1.6rem Helvetica, Arial, sans-serif;
   color: #fafafa;
   background-color: #05193c;
-}
-
-.root {
-  justify-content: flex-start;
-  align-items: stretch;
-  height: 100%;
-  width: 100vw;
-  border: 1px solid;
 }
 
 header {
@@ -47,62 +33,55 @@ header {
   padding: 1rem;
 }
 header .logo {
-  font: 1.6rem Helvetica, Arial;
+  font: 1.6rem Helvetica, Arial, sans-serif;
   word-wrap: break-word;
   margin: 1rem;
 }
-header .search-form {
+header .searchForm {
   flex-wrap: nowrap;
   margin: auto;
 }
 header input[type=text] {
   max-width: 25rem;
   width: 100%;
-  font: 1.6rem Helvetica, Arial;
+  font: 1.6rem Helvetica, Arial, sans-serif;
   color: #fafafa;
   background-color: #05193c;
   outline: none;
   border: none;
   border-bottom: 1px solid #e6e6e6;
 }
-header .search {
+header .searchButton {
   width: 2.5rem;
   height: 2.5rem;
   color: #fafafa;
   background-color: #05193c;
   border: none;
 }
-header .search:hover {
+header .searchButton:hover {
   color: #bebebe;
 }
-header .switchMeasurement {
-  justify-content: space-evenly;
-  max-width: 10rem;
+header .curentLocationButton {
+  text-align: center;
+  max-width: 13rem;
   width: 100%;
   height: 2.5rem;
   margin: 1rem;
   font-size: 1.5rem;
 }
 
-main {
-  align-items: stretch;
-}
-main .currentDataMain {
+main .currentData {
+  max-width: 30rem;
+  width: 100%;
   background-color: #fafafa;
   color: #05193c;
-}
-main .currentDataMain .currentDataNow {
-  max-width: 20rem;
-  width: 100%;
-  border: 1px solid;
-  /*flex: 0 0 20rem;*/
-}
-.example {
-  color: #fafafa;
+  margin: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
 }
 
-footer {
-  grid-area: footer;
+.containerTimeDate {
+  justify-content: space-between;
 }
 
 /*# sourceMappingURL=style.css.map */
