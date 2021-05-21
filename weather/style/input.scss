@@ -82,6 +82,20 @@ header {
   .searchButton:hover {
     color: $main-color-hover;
   }
+  .location {
+    @extend %row;
+    justify-content: space-between;
+    max-width: 15rem;
+    width: 100%;
+    margin: 1rem .5rem;
+
+    .locationRefresh {
+      cursor: pointer;
+    }
+    .locationRefresh:hover {
+      color: $main-color-hover;
+    }
+  }
   .curentLocationButton {
     text-align: center;
     max-width: 13rem;
