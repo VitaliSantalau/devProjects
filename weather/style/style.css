@@ -9,7 +9,7 @@ a {
   color: inherit;
 }
 
-.containerTimeDate .date, .containerTimeDate .time, .containerTimeDate, main, header .location, header .searchForm, header .logo, header {
+.containerTemperature, .containerTimeDate .date, .containerTimeDate .time, .containerTimeDate, main, header .location, header .searchForm, header .logo, header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,14 +51,14 @@ header input[type=text] {
   border: none;
   border-bottom: 1px solid #e6e6e6;
 }
-header .searchButton {
+header .searchCityButton {
   width: 2.5rem;
   height: 2.5rem;
   color: #fafafa;
   background-color: #05193c;
   border: none;
 }
-header .searchButton:hover {
+header .searchCityButton:hover {
   color: #bebebe;
 }
 header .location {
@@ -93,7 +93,16 @@ main .currentData {
 }
 
 .containerTimeDate {
+  margin-bottom: 1rem;
   justify-content: space-between;
+}
+.containerTemperature {
+  justify-content: flex-start;
+  font-size: 5rem;
+  margin: 1rem;
+}
+.containerTemperature .temperature {
+  font-size: 5rem;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -12,6 +12,8 @@ const month = document.querySelector('.month');
 const day = document.querySelector('.day');
 // main widget
 const outputCity = document.querySelector('.outputCity');
+const temperature = document.querySelector('.temperature');
+const weatherDescription = document.querySelector('.weatherDescription');
 
 // manipulation with location
 function getLocationSetStorage() { // get coordinates of location and set them to LocalStorage
@@ -98,14 +100,9 @@ function outputDate() {
   }
 }
 
-async function outputWeatherData(city) {
-  const { name, sys } = await getWeatherData(city);
-  outputCity.innerHTML = `${name}, ${sys.country}`;
-}
-
-async function getWeatherData(city) {
+async function getData(city) {
   // url for get weather data from openweathermap by city name 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
   try {
     let response = await fetch(url);
     let data = await response.json();
@@ -115,10 +112,31 @@ async function getWeatherData(city) {
   }
 }
 
+async function outputData(city) {
+  try {
+    const { 
+      name,
+      weather,
+      main,
+    } = await getData(city);
+    if(!name) throw new Error('We cannot find this city, try to search another one!');
+    outputCity.innerHTML = name;  
+    temperature.innerHTML = main.temp;
+    weatherDescription.innerHTML = weather[0].description;
+  } catch (error) {
+    alert(error.message);
+  }
+}
+
 searchForm.addEventListener('submit', async e => {
   e.preventDefault();
-  const { name } = await getWeatherData(inputCity.value);
-  outputCity.innerHTML = `<div>${name}</div>`;
-  })
+  try {
+    if(!inputCity.value) throw new Error('Enter searching city!');
+    outputData(inputCity.value);      
+    inputCity.value = '';  
+  } catch (error) {
+    alert(error.message);
+  }
+})
 
 document.addEventListener("DOMContentLoaded", outputDate(), outputLocation())

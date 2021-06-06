@@ -72,14 +72,14 @@ header {
     border: none;
     border-bottom: 1px solid rgb(230, 230, 230);
   }
-  .searchButton {
+  .searchCityButton {
     width: 2.5rem;
     height: 2.5rem;
     color: $main-color;
     background-color: $main-background-color;
     border: none;
   }
-  .searchButton:hover {
+  .searchCityButton:hover {
     color: $main-color-hover;
   }
   .location {
@@ -121,11 +121,22 @@ main {
 
 .containerTimeDate {
   @extend %row;
+  margin-bottom: 1rem;
   justify-content: space-between;
   .time {
     @extend %row;
   }
   .date {
     @extend %row;
+  }
+}
+
+.containerTemperature {
+  @extend %row;
+  justify-content: flex-start;
+  font-size: 5rem;
+  margin: 1rem;
+  .temperature {
+    font-size: 5rem;
   }
 }
